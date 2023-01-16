@@ -40,7 +40,7 @@ public class CustomerEndpointDefinitions : IEndpointDefinition
         return Results.Ok(customer);
     }
 
-    private async  Task<IResult> CreateCustomer(ICustomerRepository customerRepository, Customer customer)
+    private async  Task<IResult> CreateCustomer(Customer customer, ICustomerRepository customerRepository)
     {
         await Task.Delay(1);
         Customer c = customerRepository.Add(customer);
